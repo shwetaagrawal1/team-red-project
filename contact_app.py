@@ -6,17 +6,17 @@ from directory import Directory
 
 class JSONWriter:
     def __init__(self):
-        pass
-
-    temp_dict = {}
-    get_obj = JSONReader()
-    data = get_obj.get_all()
-    for recordes in data:
-        temp_dict.update({recordes.get_phone_number(): {"name": recordes.get_name(), "email": recordes.get_email_id(),"city": recordes.get_city()}})
+        self.temp_dict = {}
+        get_obj = JSONReader()
+        data = get_obj.get_all()
+        for recordes in data:
+            self.temp_dict.update({recordes.get_phone_number(): {"name": recordes.get_name(), "email": recordes.get_email_id(),"city": recordes.get_city()}})
 
     def add_contact(self,person):
 
         dict = {person.get_phone_number():{"name":person.get_name(),"email":person.get_email_id(),"city":person.get_city()}}
+        if person.get_phone_number() in self.temp_dict.keys():
+            return "contact is exixt"
         self.temp_dict.update(dict)
 
         with open("jsonFile.json", "w") as filepointer:
