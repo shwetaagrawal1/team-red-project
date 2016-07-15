@@ -9,8 +9,9 @@ class JSONReader(object):
         with open(self.path) as data_file1:
             data = json.load(data_file1)
             if data == {}:
-                print 'json data is empty'
-                return
+                person_details.append('json data is empty')
+                return person_details
+
         map1 = data
         for key in map1:
             person = Person()
@@ -22,36 +23,40 @@ class JSONReader(object):
 
         return person_details
 
-
+########################################################################################################################
 
     def get_contacts(self, number):
+        person_details = list()
         with open(self.path) as data_file1:
             data = json.load(data_file1)
             if data == {}:
-                print 'json data is empty'
-                return
+                person_details.append('json data is empty')
+                return person_details
+
         if number in data.keys():
             map1 = data[number]
-            person_details = Person()
-            person_details.set_name(str(map1['name']))
-            person_details.set_city(str(map1['city']))
-            person_details.set_email_id(str(map1['email']))
-            person_details.set_phone_number(str(number))
+            person = Person()
+            person.set_name(str(map1['name']))
+            person.set_city(str(map1['city']))
+            person.set_email_id(str(map1['email']))
+            person.set_phone_number(str(number))
+            person_details.append(person)
             return person_details
         else:
-            print 'data does not exist'
-            return
+            person_details.append('data does not exist')
+            return person_details
 
-
+    ########################################################################################################################
 
     def get_field(self, field, value):
+        person_details = list()
         with open(self.path) as data_file1:
             data = json.load(data_file1)
             if data == {}:
-                print 'json data is empty'
-                return
+                person_details.append('json data is empty')
+                return person_details
+
         map1 = data
-        person_details = list()
         for key in map1:
             if map1[key][field] == value:
                 person = Person()
@@ -61,12 +66,13 @@ class JSONReader(object):
                 person.set_phone_number(str(key))
                 person_details.append(person)
 
-        if person_details == []:
-            print 'Provided data doesnt exist'
-            return
+        if not person_details:
+            person_details.append('Provided data doesnt exist')
+            return person_details
+
         return person_details
 
-
+########################################################################################################################
 
 if __name__ == '__main__':
     obj = JSONReader()
@@ -76,17 +82,18 @@ if __name__ == '__main__':
             print i.__dict__
 
     except:
-        print ()
+        print (p)
     p1 = obj.get_contacts('123')
     try:
-        print p1.__dict__
+        for i in p1:
+            print i.__dict__
     except:
-        print ()
+        print (p1)
     p2 = obj.get_field('name', 'ram')
     try:
         for i in p2:
             print i.__dict__
 
     except:
-        print ()
+       print p2
 
