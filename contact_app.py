@@ -1,8 +1,5 @@
-import sys
 import json
 from json_reader import JSONReader
-from Person import Person
-from directory import Directory
 
 class JSONWriter:
     def __init__(self):
@@ -20,7 +17,7 @@ class JSONWriter:
         self.temp_dict.update(dict)
 
         with open("jsonFile.json", "w") as filepointer:
-            filepointer.write(json.dumps(self.temp_dict))
+            json.dump(self.temp_dict,filepointer, indent=2)
 
 
 
@@ -43,7 +40,7 @@ class JSONWriter:
         if number in self.temp_dict.keys():
             del self.temp_dict[number]
         with open("jsonFile.json", "w") as filepointer:
-            filepointer.write(json.dumps(self.temp_dict))
+            json.dump(self.temp_dict, filepointer, indent=2)
 
 
     """ with open("jsonFile.json", "r") as filepointer:
@@ -74,7 +71,7 @@ class JSONWriter:
             y = {person.get_phone_number(): x}
             self.temp_dict.update(y)
             with open("jsonFile.json", "w") as filepointer:
-                filepointer.write(json.dumps(self.temp_dict))
+                json.dump(self.temp_dict, filepointer, indent=2)
 
         """with open("jsonFile.json", "r") as filepointer:
             if filepointer.read() == "":
