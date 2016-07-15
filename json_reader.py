@@ -76,24 +76,10 @@ class JSONReader(object):
 
 """if __name__ == '__main__':
     obj = JSONReader()
-    p = obj.get_all()
-    try:
-        for i in p:
-            print i.__dict__
-
-    except:
-        print (p)
-    p1 = obj.get_contacts('123')
+    p1 = obj.get_contacts('1230456789')
     try:
         for i in p1:
             print i.__dict__
     except:
-        print (p1)
-    p2 = obj.get_field('name', 'ram')
-    try:
-        for i in p2:
-            print i.__dict__
-
-    except:
-       print p2"""
+        print (p1)"""
 
