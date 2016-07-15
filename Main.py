@@ -1,12 +1,9 @@
 import sys
-from contact_app import JSONWriter
-from json_reader import JSONReader
 from Person import Person
 from directory import Directory
 
 class Main:
-    writer_obj = JSONWriter()
-    reader_obj = JSONReader()
+
     dir_obj = Directory()
     person = Person()
     while(1):
@@ -26,7 +23,9 @@ class Main:
             print "Enter  city:"
             city = raw_input()
             person.set_city(city)
-            writer_obj.add_contact(person)
+            statement = dir_obj.add_contact_directory(person)
+            if statement != None:
+                print statement
 
         elif case == 2:
             print "Enter contact number for modification:"
@@ -42,58 +41,71 @@ class Main:
             city = raw_input()
             person.set_city(city)
 
-            writer_obj.modify_contact(person)
+            dir_obj.modify_contact_directory(person)
 
         elif case == 3:
-            data = reader_obj.get_all()
+            data = dir_obj.get_all_directory()
             try:
-                for i in data:
-                    print(i.__dict__)
+                for index_data in data:
+                    print(index_data.__dict__)
             except:
-                print()
+                print data
 
         elif case == 4:
             print "Enter number for delete contact:"
-            number = input()
-            writer_obj.delete_contact(number)
+            number = raw_input()
+            dir_obj.delete_contact_directory(number)
 
         elif case == 5:
             print "Enter field"
             field = raw_input()
             print "Enter value"
             value = raw_input()
-            dir_obj.get_filter(field,value)
+            list_records = dir_obj.get_filter(field,value)
+            if not list_records:
+                print "data doesn't exist"
+            else:
+                for records in list_records:
+                    print records.__dict__
+
 
         elif case == 6:
             print "Enter Phone number"
             number = raw_input()
-            data = reader_obj.get_contacts(number)
+            data_records = dir_obj.get_contacts_directory(number)
             try:
-                print(data.__dict__)
+                for data in data_records:
+                    print(data.__dict__)
             except:
-                print()
+                print data_records
 
         elif case == 7:
             print "Enter field"
             field = raw_input()
             print "Enter value"
             value = raw_input()
-            p2 = reader_obj.get_field(field, value)
+            person_record = dir_obj.get_field_directory(field, value)
             try:
-                for i in p2:
-                    print(i.__dict__)
+                for index_data in person_record:
+                    print(index_data.__dict__)
             except:
-                print()
+                print person_record
 
         elif case == 8:
             print "Enter Phone number"
             number = raw_input()
-            dir_obj.get_provider_name(number)
+            name = dir_obj.get_provider_name(number)
+            print name
 
         elif case == 9:
             print "Enter provider name"
             provider = raw_input()
-            dir_obj.get_records_of_provider(provider)
+            list_provider = dir_obj.get_records_of_provider(provider)
+            if not list_provider:
+                print "data doesn't exist"
+            else:
+                for person in list_provider:
+                    print person.__dict__
 
         elif case == 10:
             sys.exit()
