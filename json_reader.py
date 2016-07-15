@@ -74,7 +74,7 @@ class JSONReader(object):
 
 ########################################################################################################################
 
-if __name__ == '__main__':
+"""if __name__ == '__main__':
     obj = JSONReader()
     p = obj.get_all()
     try:
@@ -95,5 +95,5 @@ if __name__ == '__main__':
             print i.__dict__
 
     except:
-       print p2
+       print p2"""
 
