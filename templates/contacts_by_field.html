@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>contacts_by_field</title>
+      <style type="text/css">
+       a{
+       margin-left:840px;}
+    h3{text-align:center}
+    form{
+  text-align:center;
+  position: right;
+  border :1px solid black;
+  width  : 250px;
+  height : 200px;
+  margin-top:50px;
+  margin-left:760px;
+  padding :30px;
+  background: gray
+}
+</style>
+</head>
+<body>
+<h3>SEARCH CONTACTS HERE</h3><hr><br>
+            <form method = "get" action="/contacts_by_field_method">
+                FIELD NAME:<br><input type = "text" value ="" placeholder="email/name" name = "field" required><br>
+                VALUE:<br><input type = "text" value ="" placeholder="value" name = "value" required><br>
+                <input type="submit">
+                <button type="reset" value="Reset">Reset</button>
+            </form>
+            <br><br><a href = "/">Go back to home page</a>
+</body>
+</html>

@@ -105,7 +105,7 @@ class Main:
                 print "data doesn't exist"
             else:
                 for person in list_provider:
-                    print person.__dict__
+                    print person
 
         elif case == 10:
             sys.exit()

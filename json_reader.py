@@ -9,7 +9,7 @@ class JSONReader(object):
         with open(self.path) as data_file1:
             data = json.load(data_file1)
             if data == {}:
-                person_details.append('json data is empty')
+                person_details.append("none")
                 return person_details
 
         map1 = data
@@ -74,12 +74,6 @@ class JSONReader(object):
 
 ########################################################################################################################
 
-"""if __name__ == '__main__':
+if __name__ == '__main__':
     obj = JSONReader()
-    p1 = obj.get_contacts('1230456789')
-    try:
-        for i in p1:
-            print i.__dict__
-    except:
-        print (p1)"""
-
+    p1 = obj.get_all()

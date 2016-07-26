@@ -1,1 +1,42 @@
-{"1234567890": {"city": "hyd", "name": "abhi", "email": "abhi"}, "1230456789": {"city": "hyd", "name": "akhila", "email": "akhila"}, "8985168734": {"city": "hyd", "name": "adarsh", "email": "adarsh"}}
+{
+  "1234": {
+    "city": "hyd", 
+    "name": "nhcgh", 
+    "email": "kjgjh"
+  }, 
+  "99001456412": {
+    "city": "mlg", 
+    "name": "vijaya", 
+    "email": "jhgdfd"
+  }, 
+  "132456": {
+    "city": "hyd", 
+    "name": "arun", 
+    "email": "hjgui"
+  }, 
+  "98488975564": {
+    "city": "hyd", 
+    "name": "nisha", 
+    "email": "hjghdfufh"
+  }, 
+  "930078675956": {
+    "city": "nlg", 
+    "name": "Ravi", 
+    "email": "hggdfrtrdd"
+  }, 
+  "12345": {
+    "city": "hyd", 
+    "name": "akhila", 
+    "email": "akhi"
+  }, 
+  "8985168734": {
+    "city": "Hyderabad", 
+    "name": "Nani", 
+    "email": "adarshnamsani24@gmail.com"
+  }, 
+  "5463210489": {
+    "city": "mnbvcxz", 
+    "name": "dsfdf", 
+    "email": "asdfghjjkl;"
+  }
+}

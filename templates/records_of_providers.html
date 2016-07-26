@@ -1,0 +1,52 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>search_contacts</title>
+    <title>add_contact</title>
+    <style type="text/css">
+    table {
+    border-collapse: collapse;
+     }
+    a{margin-left:860px;}
+    h2{text-align:center}
+    h3{text-align:center}
+    form{
+  text-align:center;
+  position: right;
+  border :1px solid black;
+  width  : auto;
+  height : auto;
+  margin-top:50px;
+  margin-left:600px;
+  padding :30px;
+  background: gray
+}
+</style>
+</head>
+<body>
+    <h2>PROVIDERS CONTACTS LIST</h2>
+    {% if not result %}
+        <h3>NO RECORD AVILABLE WITH THIS FIELDS</h3>
+    {% else %}
+    <form>
+        <table border="1px">
+            <tr>
+                <th>NUMBER</th>
+                <th>NAME</th>
+                <th>EMAIL_ID</th>
+                <th>CITY</th>
+            </tr>
+            {% for data in result %}
+            <tr>
+                <td>{{data["phone_number"]}}</td>
+                <td>{{data["name"]}}</td>
+                <td>{{data["email_id"]}}</td>
+                <td>{{data["city"]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+   </form>
+  <br><br><a href = "/">Go back to home page</a>
+</body>
+</html>

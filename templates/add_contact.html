@@ -1,0 +1,49 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+        "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+    <title>add_contact</title>
+    <style type="text/css">
+     a{
+       margin-left:840px;}
+    h3{text-align:center}
+    form{
+  text-align:center;
+  position: right;
+  border :1px solid black;
+  width  : 250px;
+  height : 400px;
+  margin-top:50px;
+  margin-left:760px;
+  padding :30px;
+  background: gray
+}
+</style>
+
+    <script type="text/javascript">
+function myfunction(){
+
+          if(!document.getElementById("name").value)
+          {
+            alert(blank fieldes are not acceptable:);
+          }
+}
+</script>
+</head>
+<body>
+<div>
+            <h3>ADD CONTACT HERE</h3><hr><br>
+            <form method = "get" action="/add_contacts_method">
+                Contact Name:<br><input type = "text" value ="" placeholder="name" name = "name" required><br>
+                Contact Number:<br><input type = "text" value ="" placeholder="number" name = "number" required><br>
+                Contact Email:<br><input type = "text" value ="" placeholder="username@abc.com" name = "email" required><br>
+                Contact city:<br><input type = "text" value ="" placeholder="City" name = "city" required><br><br>
+                <input type="submit">
+                <button type="reset" value="Reset">Reset</button><br>
+                <div id = "message"><h4>{{result}}</h4></div>
+
+            </form>
+    <br><br><a href = "/">Go back to home page</a>
+</div>
+</body>
+</html>

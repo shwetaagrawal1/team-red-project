@@ -10,8 +10,8 @@ class Directory:
     def __init__(self):
         self.providers['airtel'] = ['9900', '9800', '9811']
         self.providers['BSNL'] = ['9440', '9822']
-        self.providers['Idea'] = ['9848', '9912']
-        self.providers['Reliance'] = ['9300', '9812']
+        self.providers['idea'] = ['9848', '9912']
+        self.providers['reliance'] = ['9300', '9812']
         self.method = ""
         self.reader_obj = JSONReader()
         self.writer_obj = JSONWriter()
@@ -57,7 +57,7 @@ class Directory:
             string2 = self.l_data[index].get_phone_number()
             string2 = string2[0:4]
             if string2 in list2:
-                list3.append(self.l[index].__dict__)
+                list3.append(self.l_data[index].__dict__)
 
         return list3
 
@@ -65,10 +65,10 @@ class Directory:
         return self.writer_obj.add_contact(person)
 
     def modify_contact_directory(self, person):
-        self.writer_obj.modify_contact(person)
+        return self.writer_obj.modify_contact(person)
 
     def delete_contact_directory(self, number):
-        self.writer_obj.delete_contact(number)
+        return self.writer_obj.delete_contact(number)
 
     def get_all_directory(self):
         return self.reader_obj.get_all()

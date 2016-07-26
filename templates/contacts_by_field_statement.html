@@ -1,0 +1,30 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>search_contacts</title>
+</head>
+<body>
+    <h2>AVILABLE CONTACTS</h2>
+    {% if result == ['Provided data doesnt exist']%}
+        <h3>NO RECORD AVILABLE WITH THIS FIELDS</h3>
+    {% else %}
+        <table border="1px">
+            <tr>
+                <th>NUMBER</th>
+                <th>NAME</th>
+                <th>EMAIL_ID</th>
+                <th>CITY</th>
+            </tr>
+            {% for data in result %}
+            <tr>
+                <td>{{data["phone_number"]}}</td>
+                <td>{{data["name"]}}</td>
+                <td>{{data["email_id"]}}</td>
+                <td>{{data["city"]}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endif %}
+<a href = "/">Go back to home page</a>
+</body>
+</html>

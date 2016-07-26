@@ -6,8 +6,9 @@ class JSONWriter:
         self.temp_dict = {}
         get_obj = JSONReader()
         data = get_obj.get_all()
-        for recordes in data:
-            self.temp_dict.update({recordes.get_phone_number(): {"name": recordes.get_name(), "email": recordes.get_email_id(),"city": recordes.get_city()}})
+        if data != ['none']:
+            for recordes in data:
+                self.temp_dict.update({recordes.get_phone_number(): {"name": recordes.get_name(), "email": recordes.get_email_id(),"city": recordes.get_city()}})
 
     def add_contact(self,person):
 
@@ -41,6 +42,7 @@ class JSONWriter:
             del self.temp_dict[number]
         with open("jsonFile.json", "w") as filepointer:
             json.dump(self.temp_dict, filepointer, indent=2)
+        return "contact deleted successfully"
 
 
     """ with open("jsonFile.json", "r") as filepointer:
@@ -72,6 +74,7 @@ class JSONWriter:
             self.temp_dict.update(y)
             with open("jsonFile.json", "w") as filepointer:
                 json.dump(self.temp_dict, filepointer, indent=2)
+            return "contact updataed successfully"
 
         """with open("jsonFile.json", "r") as filepointer:
             if filepointer.read() == "":
@@ -96,3 +99,4 @@ class JSONWriter:
 
                 else:
                     print "number not exist"""""
+

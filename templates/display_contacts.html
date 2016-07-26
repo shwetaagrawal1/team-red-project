@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>display_contacts</title>
+    <style type="text/css">
+      table{align:center}
+    a{
+       margin-left:840px;}
+    h2{text-align:center}
+    form{
+  text-align:center;
+  position: right;
+  border :1px solid black;
+  width  : 550px;
+  height : auto;
+  margin-top:30px;
+  margin-left:720px;
+  padding :30px;
+  background: gray
+}
+</style>
+</head>
+<body>
+    <h2>CONTACTS DIRECTORY<hr></h2>
+    <form>
+    <table border="1px">
+
+        <tr>
+            <th>NUMBER</th>
+            <th>NAME</th>
+            <th>EMAIL_ID</th>
+            <th>CITY</th>
+        </tr>
+        {% for data in result %}
+        <tr>
+            <td>{{data["phone_number"]}}</td>
+            <td>{{data["name"]}}</td>
+            <td>{{data["email_id"]}}</td>
+            <td>{{data["city"]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+        </form><br><br>
+<a href = "/">Go back to home page</a>
+</body>
+</html>
